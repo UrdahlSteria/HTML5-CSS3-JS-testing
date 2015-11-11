@@ -1,0 +1,133 @@
+<!DOCTYPE HTML5>
+<html lang="en">
+<head>
+	<meta chatset="utf-8">
+	<meta name="Bongo" content="width=500">
+	<title>
+		HTML5, CSS3, JavaScript Certification testing
+	</title>
+
+	<link rel="stylesheet" href="style.css" media="screen" />
+	<style>
+		#more custome style
+	</style>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
+</head>
+
+<!--.....................................................................-->
+
+
+
+<body id="main">
+<header>
+	<noscript>This page uses JavaScript. Please enable it in your browser</noscript>
+	<div class="header">
+	<h1> This will be the initial testing site for HTML5, CSS3, JavaScript Certification. (Bongo) </h1>
+		<p> Starting the certification process for Ole Magnus to prove <strong>front-end skills</strong>, this page will serve as a <em>personal</em> html/css/js playground and should show to become a great place for personal skills development. Good luck, godspeed! (Bongo)</p>
+	</div>
+	<nav>
+	<div id="">
+		Elements in the header should be : Info ... Registered ... Tasks ... Other...
+	</nav>
+
+</header>
+
+<section="group">
+		<aside id="formID" >
+		<h3> This will be the initial form testing</h3>
+		<form novalidate class="topForm">
+			<label>Search:</label>
+			<input type="search" id="search" name="search" >
+			<button for="search" name="searchClicker">Initiate</button>
+			<br/>
+		</form>
+		<form name="userRegister" method="post" onsubmit="return validateForm();">
+		<fieldset>
+			<legend> Please Register User Info: </legend>
+			<input type="name" 
+					id="name" 
+					name="name" 
+					placeholder="Ola Nordmann..." 
+					autofocus
+					required>
+					</input><br />
+			
+			<input type="phone" 
+					id="phone" 
+					name="phone"
+					placeholder="+47 55 55 55 55"
+					pattern="[0-9]{8}[A-Z]{0}"
+					>
+					</input><br />
+						
+			<input id="ageCategory" name="ageCategory" list="ageRanges" value="Adult" /> <!--placeholder="Fill in age..." /> .-->
+				<datalist id="ageRanges">
+					<option value="Under twos"></option>
+					<option value="2 - 7"></option>
+					<option value="8 - 12"></option>
+					<option value="13 - 18"></option>
+					<option value="Adult"></option>
+				</datalist><br/>
+							
+			<input type="email"
+					id="email"
+					name="email"
+					placeholder="name@soprasteria.com"
+					pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+					required>
+					</input><br />
+			
+			<input type="password"
+					id="userPassword"
+					name="userPassword"
+					placeholder="Set password..."
+					required>
+					</input> <br /><!--...-->
+
+			<input type="password"
+					id="confirmPassword"
+					name="confirmPassword"
+					placeholder="Confirm password..."
+					required>
+					</input><br /><!--...-->
+					
+			<label for="theChoice">Make a choice:</label>
+			<input type="radio" id="choice" name="choice" value="this" > This
+			<input type="radio" id="choice" name="choice" value="that" required> That
+			</fieldset>
+			<button type="submit" id="submit">Register</button>
+			
+		</form>
+	</aside>
+	<section id="mediaID">
+		<h2> This will be the initial media testing</h2>
+		<video src="media\video\Skjeberg.mp4#t=1,20" type="video/mp4" width="400" hight="260" controls time="0.06"></video> <br/>
+		Song: <audio src="media\sound\Kalimba.mp3" controls>
+	</section>
+	
+	<section id="jsID">
+		<h2> This will be the initial JavaScript testing</h2>
+		<section id="jsSection">
+			<p id="jsParagraph"> This should be changed </p>
+		</section>
+	</section>
+	
+	<section id="dragAndDrop">
+		<h2> This will be the Drag and Drop Tutorial test </h2>
+			<div id="source-container" data-role="drag-drop-container">
+				<img id="moveable" draggable="true" src="media\pictures\Koala.jpg" />
+			</div>
+			<div id="target-container" data-role="drag-drop-container"></div>
+			
+	</section>
+	
+	</section>
+
+	<footer>
+		Fake copyrighttext somethn somethn,  (Bongo)  
+		Posted by: Ole Magnus Urdahl, 2015<br/>
+		Contact information: <a href="mailto:someone@example.com"> someone@example.com</a>.
+	</footer>
+	<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
