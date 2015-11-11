@@ -1,0 +1,78 @@
+h1 {
+	color: 0f0fa0;
+}
+
+h4 {
+	margin-bottom: 3px;
+}
+
+
+body {
+	background-color: fafaff;
+	font-family:"Helvetica", serif;
+	
+}
+
+
+
+#formID {
+	border: 2px;
+	border-style: solid;
+	border-color: a3a3c3;
+}
+
+#source-container{
+	height: 300px;
+	width: 45%;
+	border: solid 5px #222;
+	float: left;
+}
+#target-container {
+	height: 300px;
+	width: 45%;
+	border: solid 5px #222;
+	float: right;
+}
+#moveable{
+	height: 200px;
+}
+
+input{
+  border: solid 1px #888;
+  margin:2px;
+}
+input:required
+{
+  border-color: #f00;
+}
+input:invalid {
+  border-color: #f00;
+}
+input:valid {
+  border-color: #aaa;
+}
+
+
+header,
+section,
+aside,
+footer {
+	margin: 0 1.5% 24px 1.5%;
+}
+section {
+	float: left;
+	width: 63%;
+}
+aside {
+	float: right;
+	width: 30%;
+}
+footer {
+	clear: both;
+	padding: 5px;
+	border: 3px;
+	border-style: solid;
+	border-color: 444455;
+	
+}
+
