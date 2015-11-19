@@ -1,19 +1,62 @@
-h1 {
-	color: 0f0fa0;
-}
 
-h4 {
-	margin-bottom: 3px;
-}
-
-
-body {
-	background-color: fafaff;
-	font-family:"Helvetica", serif;
+nav{
 	
 }
 
+#taskList {
+	width: 30%;
+	margin: 0 1.5% 24px 1.5%;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background-color: #eeeeee;
+	border-style: solid;
+	border-color: #111111;
+	border-width: 2px;
+	padding-left: 20px;
+	font-weight: bold;
+	max-height: 120px;
+	overflow:scroll;
+    overflow-x:hidden;
+}
 
+div.inLine{
+	background-color: 	#222277;
+	font-weight: 		bold;
+	font-size: 			20;
+	float: 				left;
+	padding-top:		5px;
+	margin-left: 		20px;
+	padding-left: 		50px;
+	padding-right: 		50px;
+	position: relative;
+	-moz-border-radius-bottomright: 2em;
+	-moz-border-radius-bottomleft: 2em;
+}
+div.inLine:hover{
+	background-color: #333388;
+	cursor: hand;
+}
+
+.clearBoth {
+	clear.both;
+}
+
+h1:hover h4:hover{
+	color: #c22;
+	transition-property: color;
+	transition-duration: 5s;
+}
+
+
+
+#moveable:hover{
+	transform:rotate(2deg);
+}
+
+#skjeVid {
+	width: 80%;
+}
 
 #formID {
 	border: 2px;
@@ -52,15 +95,31 @@ input:valid {
   border-color: #aaa;
 }
 
-
-header,
+/*header, */
 section,
 aside,
 footer {
 	margin: 0 1.5% 24px 1.5%;
+	
 }
+header{
+	font-family: helvetica;
+	color: fafaff;
+	padding: 10px;
+	margin-bottom:30px;
+	background-color: #000033;
+}
+body {
+	font-family:"Helvetica", serif;
+	background-color: #000033;
+}
+
+#main {
+	background-color: fafaff;
+}
+
 section {
-	float: left;
+	float: center-left;
 	width: 63%;
 }
 aside {

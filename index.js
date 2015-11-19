@@ -1,14 +1,113 @@
 "use strict";
+var taskList = [];
+InitializePage();	
+
+
+function InitializePage(){
+	if(typeof(localStorage.taskItem) !== undefined) {
+    // Code for localStorage/sessionStorage.
+		var tempList = localStorage.getItem('taskList');
+		taskList = JSON.parse(tempList);
+			SetTaskList(taskList);
+	} else {
+    // Sorry! No Web Storage support..
+	}
+
+}
+
+function SetTaskList(taskList){
+	for (var i = 0; i < taskList.length; i++){
+		AddTask(taskList[i]);
+	}
+	
+	showTaskList();
+}
+function AddTask(taskName){
+	var node = document.createElement("LI");
+	var cb = document.createElement("input");
+	cb.type = "checkbox";
+	cb.id = taskName + "CB";
+	node.appendChild(cb);
+	var textnode = document.createTextNode(taskName);
+	node.appendChild(textnode)
+	$('#taskList').append(node);
+	
+	
+	
+	//Display the TaskList
+	var tasker = document.getElementById("tasks");
+	if(tasker.style.visibility==='hidden')
+	{
+		tasker.style.visibility='visible';
+	}
+	return false;
+};
+
+function UpdateLocalTaskList(addOrRemove, taskName){
+	
+}
+
 
 document.write("Display message to the user");
 
 var RegisteredUser = {
 	"name": "Test Mann User",
+	"phone": "49291959",
 	"email": "test@test.com",
+	"ageCategory": "Adult",
 	"password": "thepasswordislong",
 	
 };
+
 var tempUser = RegisteredUser;
+
+function showTaskList(){
+	var tasker = document.getElementById("tasks");
+	if(tasker.style.visibility==='hidden')
+	{
+		tasker.style.visibility='visible';
+	}
+	else{
+		
+		tasker.style.visibility='hidden';
+	}
+};
+
+
+$("#userRegister").submit(function() {
+	tempUser.name = $("#name").val();
+	tempUser.phone = $("#phone").val();
+	tempUser.ageCategory = $("#ageCategory").val();
+	tempUser.email = $("#email").val();
+	tempUser.password = $("#userPassword").val();
+	
+	var qString = $(this).serialize();
+	alert(qString);
+
+	itsaSetup();
+	return false;
+});
+
+
+function OnClickTaskAdd(){
+	var temp = $("#newTask").val();
+	AddTask(temp);
+	taskList.push(temp);
+	localStorage.taskList = JSON.stringify(taskList);
+}
+
+function OnClickTaskRemove(){
+	var removeList = [];
+	var taskListNodes = document.getElementById("taskList").childNodes;
+	for (var i = 0; i < taskListNodes.length; i++){
+		if (taskListNodes[i].childNodes[0].nodeValue){
+			removeList.push(taskListNodes[i].childNodes[1].nodeValue);
+			taskListNodes[i].pop();
+			taskList.splice(i, 1);
+		}
+	}
+}
+
 
 
 function checkEmail() {
@@ -26,14 +125,15 @@ function registerUser(){ //Register a new user to be displayed in JS section //S
 	document.write(tempUser);
 };
 
-var emailInput = document.getElementById("confirm-email");
-document.getElementById("submit").addEventListener("input", registerUser, false);
+// var emailInput = document.getElementById("confirm-email");
+// document.getElementById("submit").addEventListener("input", registerUser, false);
+function itsaSetup(){
+	var testText = "UserName: " + tempUser.name + "<br/> Email: " + tempUser.email + "<br/> UserPassword: " + tempUser.password;
+	document.getElementById("jsParagraph").innerHTML = testText;
+}
 
-var testText = "UserName: " + RegisteredUser.name + "<br/> Email: " + RegisteredUser.email + "<br/> UserPassword: " + RegisteredUser.password;
-document.getElementById("jsParagraph").innerHTML = testText;
 
-document.write("<br/>" + tempUser.name);
-document.write("<br/> JS is done");
+document.write("<br/> JS is BUGFrEE!");
 
 
 
