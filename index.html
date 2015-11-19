@@ -18,21 +18,24 @@
 
 
 
-<body id="main">
+<body>
+<div id="top">
 <header>
 	<noscript>This page uses JavaScript. Please enable it in your browser</noscript>
-	<div class="header">
 	<h1> This will be the initial testing site for HTML5, CSS3, JavaScript Certification. (Bongo) </h1>
 		<p> Starting the certification process for Ole Magnus to prove <strong>front-end skills</strong>, this page will serve as a <em>personal</em> html/css/js playground and should show to become a great place for personal skills development. Good luck, godspeed! (Bongo)</p>
-	</div>
 	<nav>
-	<div id="">
-		Elements in the header should be : Info ... Registered ... Tasks ... Other...
+			<div class="inLine" id="info" >Info</div>
+			<div class="inLine" id="Registered">Registered</div>
+			<div class="inLine" id="Tasks" onclick="showTaskList()">Tasks</div>
+			<div class="inLine" id="Other">Other</div>
+			<br class="clearBoth" />
 	</nav>
 
 </header>
-
-<section="group">
+</div>
+<div id="main">
+	<section="group">
 		<aside id="formID" >
 		<h3> This will be the initial form testing</h3>
 		<form novalidate class="topForm">
@@ -41,14 +44,13 @@
 			<button for="search" name="searchClicker">Initiate</button>
 			<br/>
 		</form>
-		<form name="userRegister" method="post" onsubmit="return validateForm();">
+		<form name="userRegister" id="userRegister"method="post"> <!--...onsubmit="return validateForm();"> -->
 		<fieldset>
 			<legend> Please Register User Info: </legend>
 			<input type="name" 
 					id="name" 
 					name="name" 
 					placeholder="Ola Nordmann..." 
-					autofocus
 					required>
 					</input><br />
 			
@@ -98,10 +100,24 @@
 			<button type="submit" id="submit">Register</button>
 			
 		</form>
+		
+		<form name="taskRegister" id="taskRegister">
+			<fieldset>
+				<legend> Register New Task: </legend>
+				<input type="text" 
+						id="newTask" 
+						name="newTask"
+						placeholder="New task here..."
+						>
+						</input><br />
+			</fieldset>
+			<button type="button" id="submitTask" onclick="OnClickTaskAdd()"> Add task.. </button> <button type="button" id="removeTask" onclick="OnClickTaskRemove()"> Remove checked tasks.. </button>
+		</form>
 	</aside>
+
 	<section id="mediaID">
 		<h2> This will be the initial media testing</h2>
-		<video src="media\video\Skjeberg.mp4#t=1,20" type="video/mp4" width="400" hight="260" controls time="0.06"></video> <br/>
+		<video src="media\video\Skjeberg.mp4#t=2,20" id="skjeVid" type="video/mp4" controls time="0.06"></video> <br/>
 		Song: <audio src="media\sound\Kalimba.mp3" controls>
 	</section>
 	
@@ -118,16 +134,23 @@
 				<img id="moveable" draggable="true" src="media\pictures\Koala.jpg" />
 			</div>
 			<div id="target-container" data-role="drag-drop-container"></div>
-			
+			<div style="clear: both"></div>
 	</section>
-	
-	</section>
+	<div id="tasks">
+		<div>
+			<ul id="taskList" style="list-style-type:none">
 
+			</ul>
+		</div>
+	</div>
+	</section>
+</div>
 	<footer>
 		Fake copyrighttext somethn somethn,  (Bongo)  
 		Posted by: Ole Magnus Urdahl, 2015<br/>
 		Contact information: <a href="mailto:someone@example.com"> someone@example.com</a>.
 	</footer>
+	<div style="clear: both"></div>
 	<script type="text/javascript" src="index.js"></script>
 </body>
 </html>
